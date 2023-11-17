@@ -5,9 +5,15 @@ services:
       dockerfile: Dockerfile
     container_name: leap
     command:
-      - "--disable-replay-opts"
+      - --genesis-json
+      - /opt/leap/config/genesis.json
+      # - --snapshot
+      # - /opt/leap/snapshots/<filename>
+      - --disable-replay-opts
     volumes:
       - ./xpr-mainnet/config:/opt/leap/config
       - ./xpr-mainnet/data:/opt/leap/data
+      # - ./xpr-mainnet/snapshots:/opt/leap/snapshots
     ports:
       - "8888:8888"
+      - "8080:8080"

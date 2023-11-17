@@ -20,6 +20,5 @@ COPY start.sh /opt/leap/start.sh
 ENTRYPOINT [\
     "/opt/leap/start.sh",\
     "--data-dir", "/opt/leap/data",\
-    "--config-dir", "/opt/leap/config",\
-    "--genesis-json", "/opt/leap/config/genesis.json"\
+    "--config-dir", "/opt/leap/config"\
 ]
