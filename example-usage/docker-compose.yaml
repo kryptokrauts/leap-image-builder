@@ -1,0 +1,13 @@
+services:
+  leap:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    container_name: leap
+    command:
+      - "--disable-replay-opts"
+    volumes:
+      - ./xpr-mainnet/config:/opt/leap/config
+      - ./xpr-mainnet/data:/opt/leap/data
+    ports:
+      - "8888:8888"
