@@ -15,10 +15,8 @@ RUN adduser --disabled-password leap && \
 WORKDIR /opt/leap
 USER leap
 
-COPY start.sh /opt/leap/start.sh
-
 ENTRYPOINT [\
-    "/opt/leap/start.sh",\
+    "/usr/bin/nodeos",\
     "--data-dir", "/opt/leap/data",\
     "--config-dir", "/opt/leap/config"\
 ]

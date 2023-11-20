@@ -8,8 +8,13 @@ services:
       - --genesis-json
       - /opt/leap/config/genesis.json
       # - --snapshot
-      # - /opt/leap/snapshots/<filename>
+      # - /opt/leap/snapshots/snapshot-225128604.bin
       - --disable-replay-opts
+    ulimits:
+      nproc: 1048576
+      nofile:
+        soft: 1048576
+        hard: 1048576
     volumes:
       - ./xpr-mainnet/config:/opt/leap/config
       - ./xpr-mainnet/data:/opt/leap/data
